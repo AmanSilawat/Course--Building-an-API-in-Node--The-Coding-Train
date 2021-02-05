@@ -18,7 +18,7 @@ let words = JSON.parse(data) // convert buffer data to string
 app.get('/add/:word/:score?', function addWord(req, res) {
     let data = req.params;
     let word = data.word;
-    let score = data.score;
+    let score = Number(data.score);
 
     let reply;
     if (typeof score == 'undefined') {
